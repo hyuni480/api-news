@@ -6,6 +6,11 @@
 
 .head-line svg {
   width: 438px;
+  margin-bottom: 30px;
+}
+
+body{
+  margin: 20px;
 }
 
 .button-style {
@@ -34,4 +39,76 @@
 
 .news {
   border-bottom: 2px solid gray;
+}
+
+#input-area{
+  display: none;
+}
+
+.side-menu {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: darkgrey;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.side-menu-list button {
+  margin: 5px;
+  border: none;
+  background: none;
+}
+
+.side-menu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  border: none;
+  background: none;
+}
+
+.side-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-menu-list button:hover {
+  background-color: lightgray;
+  border-radius: 3px;
+}
+
+
+#hamburger {
+ display: none;
+}
+
+
+.side-menu {
+  width: 0;
+}
+
+
+@media (max-width: 768px) {
+  #hamburger {
+    display: block; 
+    cursor: pointer;
+    font-size: 24px;
+    margin: 10px;
+  }
+
+  .button-style {
+    display: none;
+  }
+}
+
+.searchbtn{
+  margin: 12px;
+
 }

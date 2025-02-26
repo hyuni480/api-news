@@ -28,6 +28,11 @@ const getNews = async () => {
   }
 }
 
+function openSearchArea(){
+  const searchInput = document.getElementById("search-input");
+  searchInput.style.display = "inline-block";
+}
+
 const getLatestNews = async () => {
    // url = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
    url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr`);
@@ -70,7 +75,10 @@ const render = () => {
                         ? news.description.substring(0, 200) + "..."
                         : news.description
                 }</p>
-              <div> ${news.source.name} / ${news.publishedAt}</div>
+              <div> ${news.source.name == null || news.source.name == ""
+                ? "NO_SOURCE"
+                : news.source.name} 
+                / ${moment(news.publishedAt).fromNow()}</div>
             </div>
         </div>`).join('')
 
@@ -86,3 +94,20 @@ document.getElementById("news-board").innerHTML = errorHTML
 }
 
 getLatestNews() 
+
+const openSearchBox = () => {
+  let inputArea = document.getElementById("input-area");
+  if (inputArea.style.display === "inline") {
+    inputArea.style.display = "none";
+  } else {
+    inputArea.style.display = "inline";
+  }
+};
+
+const openNav = () => {
+  document.getElementById("mySidenav").style.width = "250px";
+};
+
+const closeNav = () => {
+  document.getElementById("mySidenav").style.width = "0";
+};

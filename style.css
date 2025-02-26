@@ -4,7 +4,7 @@
   justify-content: center;
 }
 
-.head-line img {
+.head-line svg {
   width: 438px;
 }
 
@@ -12,8 +12,8 @@
   margin-top: 1em; 
   display: flex;
   justify-content: center;
-  border-top: 1px solid skyblue;
-  border-bottom: 4px double skyblue;
+  border-top: 1px solid black;
+  border-bottom: 4px double black;
   flex-wrap: wrap;
 }
 
@@ -33,5 +33,5 @@
 }
 
 .news {
-  border-bottom: 2px solid skyblue;
+  border-bottom: 2px solid gray;
 }

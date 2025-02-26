@@ -16,6 +16,7 @@ const getNews = async () => {
         throw new Error("No result for this search")
       }
       newsList = data.articles 
+      console.log(newsList)
       render();
     }else {
       throw new Error(data.message)
@@ -56,12 +57,20 @@ const getNewsByKeyword = async() => {
 const render = () => {
     const newsHTML = newsList.map(news => ` <div class="row news"> 
             <div class="col-lg-4"> 
-             <img class="news-img-size" src=${news.urlToImage}> 
+              <img class="news-img-size"
+                src="${news.urlToImage}"
+                  onerror="this.src='https://thumb.ac-illust.com/b1/b170870007dfa419295d949814474ab2_t.jpeg';"/>
             </div>
             <div class="col-lg-8"> 
               <h3> ${news.title} </h3>
-              <p> ${news.description} </p>
-              <div> ${news.source.name} * ${news.publishedAt}</div>
+               <p>${
+                      news.description == null || news.description == ""
+                        ? "내용없음"
+                        : news.description.length > 200
+                        ? news.description.substring(0, 200) + "..."
+                        : news.description
+                }</p>
+              <div> ${news.source.name} / ${news.publishedAt}</div>
             </div>
         </div>`).join('')
 

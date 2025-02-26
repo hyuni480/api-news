@@ -1,21 +1,11 @@
-console.log('main.js 연결');
 
-const API_KEY=`8aea88ecd45146d0aa0f4b56fbcc1be8`;
-let newsList = [];
+// const API_KEY = `e069d8ca7aec4b55b3b8477a11e2ee2f`
+let newsList=[]
 const menus = document.querySelectorAll(".button-style button") 
 menus.forEach(menu => menu.addEventListener("click", (event) => getNewsByCategory(event)));
 
-
-const getLatestNews = async() => {
-  const url = new URL( `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr`);
-  // new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
-
-  const response = await fetch(url);
-  const data = await response.json();
-  newsList = data.articles;
-  render();
-  console.log("ddddd",newsList);
-};
+let url = new URL(`https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr`)
+// let = new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`);
 
 const getNews = async () => {
   try{

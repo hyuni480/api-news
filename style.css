@@ -35,10 +35,12 @@ body{
 .news-img-size {
   max-width: 100%;
   max-height: 250px;
+  margin-bottom: 10px;
 }
 
 .news {
   border-bottom: 2px solid gray;
+  margin-bottom: 20px;
 }
 
 #input-area{
@@ -63,7 +65,7 @@ body{
   background: none;
 }
 
-.side-menu .closebtn {
+.side-menu.closeBtn {
   position: absolute;
   top: 0;
   right: 25px;
@@ -108,7 +110,7 @@ body{
   }
 }
 
-.searchbtn{
+.searchBtn{
   margin: 12px;
 
 }

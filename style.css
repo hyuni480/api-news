@@ -65,7 +65,7 @@ body{
   background: none;
 }
 
-.side-menu.closeBtn {
+.side-menu .closeBtn {
   position: absolute;
   top: 0;
   right: 25px;
